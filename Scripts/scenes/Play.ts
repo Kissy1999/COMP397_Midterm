@@ -23,8 +23,11 @@ module scenes
         constructor()
         {
             super();
-
+            this.rollButton=new objects.Button();
+            
             this.Start();
+
+            
         }
 
         // PRIVATE METHODS
