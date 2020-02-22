@@ -1,3 +1,6 @@
+//Author:Kishore.Jothinarayanan
+//COMP397 Midterm
+
 module scenes
 {
     export class Play extends objects.Scene
