@@ -1,7 +1,3 @@
-//Author: Kishore Jothinaryanan
-//COMP397_Midterm
-
-
 module scenes
 {
     export class Play extends objects.Scene
@@ -15,7 +11,6 @@ module scenes
         result1:number;
         result2:number;
     
- 
 
         // PUBLIC PROPERTIES
 
@@ -23,10 +18,11 @@ module scenes
         constructor()
         {
             super();
+
             this.rollButton=new objects.Button();
             
-            this.Start();
 
+            this.Start();
         }
 
         // PRIVATE METHODS
@@ -37,20 +33,23 @@ module scenes
         public Start(): void 
         {
             
-
+           
             this.rollButton = new objects.Button('./Assets/images/rollButton.png', 320, 430, true);
            
              this.Main();
-            
         }        
         
         public Update(): void 
         {
 
+             
+            this.stage.update(); 
         }
-        
+
+       
         public Main(): void 
         {
+
             this.addChild(this.rollButton);
             
             
@@ -217,9 +216,8 @@ module scenes
             });
 
 
-
         }
-
         
     }
+    
 }

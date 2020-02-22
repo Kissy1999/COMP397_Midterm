@@ -16,11 +16,11 @@ var scenes;
 (function (scenes) {
     var Play = /** @class */ (function (_super) {
         __extends(Play, _super);
-        // PRIVATE INSTANCE MEMBERS
         // PUBLIC PROPERTIES
         // CONSTRUCTOR
         function Play() {
             var _this = _super.call(this) || this;
+            _this.rollButton = new objects.Button();
             _this.Start();
             return _this;
         }
@@ -28,11 +28,157 @@ var scenes;
         // PUBLIC METHODS
         //initialize and instatiate
         Play.prototype.Start = function () {
+            this.rollButton = new objects.Button('./Assets/images/rollButton.png', 320, 430, true);
             this.Main();
         };
         Play.prototype.Update = function () {
+            this.stage.update();
+        };
+        Play.prototype.RollDice1 = function () {
         };
         Play.prototype.Main = function () {
+            var _this = this;
+            this.addChild(this.rollButton);
+            this.dice1 = new createjs.Bitmap('./Assets/images/1.png');
+            this.addChild(this.dice1);
+            this.dice1.regX = -50;
+            this.dice1.regY = -100;
+            this.dice2 = new createjs.Bitmap('./Assets/images/1.png');
+            this.dice2.regX = -400;
+            this.dice2.regY = -100;
+            this.addChild(this.dice2);
+            this.rollButton.on("click", function () {
+                _this.removeChildAt(4);
+                _this.removeChildAt(5);
+                _this.removeChildAt(4);
+                _this.removeChildAt(5);
+                _this.result1 = Math.floor((Math.random() * 6) + 1);
+                switch (_this.result1) {
+                    case 1:
+                        _this.dice1 = new createjs.Bitmap('./Assets/images/1.png');
+                        _this.addChild(_this.dice1);
+                        _this.dice1.regX = -50;
+                        _this.dice1.regY = -100;
+                        _this.no1 = new objects.Label('1', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no1);
+                        _this.no1.regX = -100;
+                        _this.no1.regY = 5;
+                        break;
+                    case 2:
+                        _this.dice1 = new createjs.Bitmap('./Assets/images/2.png');
+                        _this.addChild(_this.dice1);
+                        _this.dice1.regX = -50;
+                        _this.dice1.regY = -100;
+                        _this.no1 = new objects.Label('2', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no1);
+                        _this.no1.regX = -100;
+                        _this.no1.regY = 5;
+                        break;
+                    case 3:
+                        _this.dice1 = new createjs.Bitmap('./Assets/images/3.png');
+                        _this.addChild(_this.dice1);
+                        _this.dice1.regX = -50;
+                        _this.dice1.regY = -100;
+                        _this.no1 = new objects.Label('3', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no1);
+                        _this.no1.regX = -100;
+                        _this.no1.regY = 5;
+                        break;
+                    case 4:
+                        _this.dice1 = new createjs.Bitmap('./Assets/images/4.png');
+                        _this.addChild(_this.dice1);
+                        _this.dice1.regX = -50;
+                        _this.dice1.regY = -100;
+                        _this.no1 = new objects.Label('4', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no1);
+                        _this.no1.regX = -100;
+                        _this.no1.regY = 5;
+                        break;
+                    case 5:
+                        _this.dice1 = new createjs.Bitmap('./Assets/images/5.png');
+                        _this.addChild(_this.dice1);
+                        _this.dice1.regX = -50;
+                        _this.dice1.regY = -100;
+                        _this.no1 = new objects.Label('5', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no1);
+                        _this.no1.regX = -100;
+                        _this.no1.regY = 5;
+                        break;
+                    case 6:
+                        _this.dice1 = new createjs.Bitmap('./Assets/images/6.png');
+                        _this.addChild(_this.dice1);
+                        _this.dice1.regX = -50;
+                        _this.dice1.regY = -100;
+                        _this.no1 = new objects.Label('6', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no1);
+                        _this.no1.regX = -100;
+                        _this.no1.regY = 5;
+                        break;
+                }
+                _this.result2 = Math.floor((Math.random() * 6) + 1);
+                switch (_this.result2) {
+                    case 1:
+                        _this.dice2 = new createjs.Bitmap('./Assets/images/1.png');
+                        _this.addChild(_this.dice2);
+                        _this.dice2.regX = -400;
+                        _this.dice2.regY = -100;
+                        _this.no2 = new objects.Label('1', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no2);
+                        _this.no2.regX = -450;
+                        _this.no2.regY = 5;
+                        break;
+                    case 2:
+                        _this.dice2 = new createjs.Bitmap('./Assets/images/2.png');
+                        _this.addChild(_this.dice2);
+                        _this.dice2.regX = -400;
+                        _this.dice2.regY = -100;
+                        _this.no2 = new objects.Label('2', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no2);
+                        _this.no2.regX = -450;
+                        _this.no2.regY = 5;
+                        break;
+                    case 3:
+                        _this.dice2 = new createjs.Bitmap('./Assets/images/3.png');
+                        _this.addChild(_this.dice2);
+                        _this.dice2.regX = -400;
+                        _this.dice2.regY = -100;
+                        _this.no2 = new objects.Label('3', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no2);
+                        _this.no2.regX = -450;
+                        _this.no2.regY = 5;
+                        break;
+                    case 4:
+                        _this.dice2 = new createjs.Bitmap('./Assets/images/4.png');
+                        _this.addChild(_this.dice2);
+                        _this.dice2.regX = -400;
+                        _this.dice2.regY = -100;
+                        _this.no2 = new objects.Label('4', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no2);
+                        _this.no2.regX = -450;
+                        _this.no2.regY = 5;
+                        break;
+                    case 5:
+                        _this.dice2 = new createjs.Bitmap('./Assets/images/5.png');
+                        _this.addChild(_this.dice2);
+                        _this.dice2.regX = -400;
+                        _this.dice2.regY = -100;
+                        _this.no2 = new objects.Label('5', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no2);
+                        _this.no2.regX = -450;
+                        _this.no2.regY = 5;
+                        break;
+                    case 6:
+                        _this.dice2 = new createjs.Bitmap('./Assets/images/6.png');
+                        _this.addChild(_this.dice2);
+                        _this.dice2.regX = -400;
+                        _this.dice2.regY = -100;
+                        _this.no2 = new objects.Label('6', "30px", "fantasy", "blue", 40, 350, true);
+                        _this.addChild(_this.no2);
+                        _this.no2.regX = -450;
+                        _this.no2.regY = 5;
+                        break;
+                }
+            });
         };
         return Play;
     }(objects.Scene));
